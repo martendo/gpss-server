@@ -1,0 +1,7 @@
+# Unneeded gpss.py files
+/gpss/docs/
+/gpss/examples/
+
+# Information for humans
+LICENSE
+README.md

@@ -1,0 +1,3 @@
+[submodule "gpss"]
+	path = gpss
+	url = https://github.com/martendo/gpss.py.git
