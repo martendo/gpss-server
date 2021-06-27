@@ -1,3 +1,4 @@
+from os import environ
 from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
 from json import dumps
 from gpss import gpss
@@ -50,7 +51,7 @@ class RequestHandler(BaseHTTPRequestHandler):
         self.wfile.write(dumps(response).encode("utf-8"))
 
 def run():
-    server = ThreadingHTTPServer(("", 8000), RequestHandler)
+    server = ThreadingHTTPServer(("", int(environ["PORT"])), RequestHandler)
     server.serve_forever()
 
 if __name__ == "__main__":
