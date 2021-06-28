@@ -32,6 +32,8 @@ class RequestHandler(BaseHTTPRequestHandler):
         else:
             # No parser errors, try to run the simulation
             try:
+                # Reset simulation for fresh run
+                gpss.simulation.__init__()
                 gpss.run()
             except gpss.error.SimulationError as error:
                 # Simulation failed
