@@ -7,6 +7,13 @@ Server hosted at https://gpss-server.herokuapp.com
 To run a gpss.py program with gpss-server, send a `POST` request with
 the program in the request body.
 
+[Web gpss.py][web-gpss.py] uses something along the lines of this:
+```javascript
+const request = new XMLHttpRequest();
+request.open("POST", "https://gpss-server.herokuapp.com");
+request.send(program);
+```
+
 ## Response
 gpss-server will respond in [JSON][json]. Based on the status, the
 object that is sent back will look a little different.
@@ -57,4 +64,5 @@ The response object will look like this:
 
 [gpss.py]: https://github.com/martendo/gpss.py
 [gpss.py-examples]: https://martendo.github.io/gpss.py/examples
+[web-gpss.py]: https://martendo.github.io/gpss.py/web
 [json]: https://json.org
