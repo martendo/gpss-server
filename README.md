@@ -33,6 +33,7 @@ The response object will look like this:
   messages: [{
     linenum: integer,
     message: string,
+    type: ("parser-error" | "simulation-error" | "warning"),
   }, ... ],
 }
 ```
@@ -59,6 +60,7 @@ The response object will look like this:
   messages: [{
     linenum: integer,
     message: string,
+    type: ("parser-error" | "simulation-error" | "warning"),
   }, ... ],
 }
 ```
@@ -82,6 +84,7 @@ The response object will look like this:
   messages: [{
     linenum: integer,
     message: string,
+    type: ("parser-error" | "simulation-error" | "warning"),
   }, ... ],
 }
 ```

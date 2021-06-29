@@ -5,9 +5,18 @@ from gpss import gpss
 
 # Put important properties from an error object into a serializable dict
 def errordict(error):
+    if isinstance(error, gpss.error.SimulationError):
+        type_ = "simulation-error"
+    elif isinstance(error, gpss.error.ParserError):
+        type_ = "parser-error"
+    elif isinstance(error, gpss.error.ExecutionWarning):
+        type_ = "warning"
+    else:
+        raise TypeError(f"Unknown error type \"{error.__name__}\"")
     return {
         "linenum": error.linenum,
         "message": error.message,
+        "type": type_
     }
 
 class RequestHandler(BaseHTTPRequestHandler):
