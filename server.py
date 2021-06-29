@@ -18,6 +18,9 @@ class RequestHandler(BaseHTTPRequestHandler):
         
         response = {}
         
+        # Clear any warnings from a previous simulation
+        gpss.warnings.clear()
+        
         # Parse program from request
         gpss.parse(program=data)
         
@@ -44,6 +47,7 @@ class RequestHandler(BaseHTTPRequestHandler):
                 # Simulation was completed successfully
                 response["status"] = "success"
                 response["report"] = gpss.createReport()
+        response["warnings"] = list(map(errordict, gpss.warnings))
         
         # Send response
         self.send_response(200)

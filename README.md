@@ -26,6 +26,10 @@ The response object will look like this:
 {
   status: "success",
   report: string,
+  warnings: [{
+    linenum: integer,
+    message: string,
+  }, ... ],
 }
 ```
 
@@ -44,6 +48,10 @@ The response object will look like this:
     linenum: integer,
     message: string,
   }, ... ],
+  warnings: [{
+    linenum: integer,
+    message: string,
+  }, ... ],
 }
 ```
 
@@ -59,6 +67,10 @@ The response object will look like this:
     linenum: integer,
     message: string,
   },
+  warnings: [{
+    linenum: integer,
+    message: string,
+  }, ... ],
 }
 ```
 
