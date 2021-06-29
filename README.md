@@ -30,6 +30,10 @@ The response object will look like this:
     linenum: integer,
     message: string,
   }, ... ],
+  messages: [{
+    linenum: integer,
+    message: string,
+  }, ... ],
 }
 ```
 
@@ -52,6 +56,10 @@ The response object will look like this:
     linenum: integer,
     message: string,
   }, ... ],
+  messages: [{
+    linenum: integer,
+    message: string,
+  }, ... ],
 }
 ```
 
@@ -68,6 +76,10 @@ The response object will look like this:
     message: string,
   },
   warnings: [{
+    linenum: integer,
+    message: string,
+  }, ... ],
+  messages: [{
     linenum: integer,
     message: string,
   }, ... ],
