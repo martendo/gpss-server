@@ -15,7 +15,7 @@ def errordict(error):
         raise TypeError(f"Unknown error type \"{error.__name__}\"")
     return {
         "linenum": error.linenum,
-        "message": error.message,
+        "text": error.message,
         "type": type_
     }
 

@@ -28,7 +28,7 @@ The response object will look like this:
   report: string,
   messages: [{
     linenum: integer,
-    message: string,
+    text: string,
     type: ("parser-error" | "simulation-error" | "warning"),
   }, ... ],
 }
@@ -47,7 +47,7 @@ The response object will look like this:
   message: "Parsing failed with X error(s)",
   messages: [{
     linenum: integer,
-    message: string,
+    text: string,
     type: ("parser-error" | "simulation-error" | "warning"),
   }, ... ],
 }
@@ -63,7 +63,7 @@ The response object will look like this:
   message: "Simulation Error",
   messages: [{
     linenum: integer,
-    message: string,
+    text: string,
     type: ("parser-error" | "simulation-error" | "warning"),
   }, ... ],
 }
