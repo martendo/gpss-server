@@ -26,10 +26,6 @@ The response object will look like this:
 {
   status: "success",
   report: string,
-  warnings: [{
-    linenum: integer,
-    message: string,
-  }, ... ],
   messages: [{
     linenum: integer,
     message: string,
@@ -49,14 +45,6 @@ The response object will look like this:
 {
   status: "parser-error",
   message: "Parsing failed with X error(s)",
-  errors: [{
-    linenum: integer,
-    message: string,
-  }, ... ],
-  warnings: [{
-    linenum: integer,
-    message: string,
-  }, ... ],
   messages: [{
     linenum: integer,
     message: string,
@@ -73,14 +61,6 @@ The response object will look like this:
 {
   status: "simulation-error",
   message: "Simulation Error",
-  error: {
-    linenum: integer,
-    message: string,
-  },
-  warnings: [{
-    linenum: integer,
-    message: string,
-  }, ... ],
   messages: [{
     linenum: integer,
     message: string,

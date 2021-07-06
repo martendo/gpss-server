@@ -27,8 +27,7 @@ class RequestHandler(BaseHTTPRequestHandler):
         
         response = {}
         
-        # Clear any warnings and messages from a previous simulation
-        gpss.warnings.clear()
+        # Clear any messages from a previous simulation
         gpss.messages.clear()
         
         # Parse program from request
@@ -41,23 +40,20 @@ class RequestHandler(BaseHTTPRequestHandler):
                 f"Parsing failed with {len(gpss.parser.errors)} "
                 f"error{'s' if len(gpss.parser.errors) != 1 else ''}"
             )
-            response["errors"] = list(map(errordict, gpss.parser.errors))
         else:
             # No parser errors, try to run the simulation
             try:
                 # Reset simulation for fresh run
                 gpss.simulation.__init__()
                 gpss.run()
-            except gpss.error.SimulationError as error:
+            except gpss.error.SimulationError:
                 # Simulation failed
                 response["status"] = "simulation-error"
                 response["message"] = "Simulation Error"
-                response["error"] = errordict(error)
             else:
                 # Simulation was completed successfully
                 response["status"] = "success"
                 response["report"] = gpss.createReport()
-        response["warnings"] = list(map(errordict, gpss.warnings))
         response["messages"] = list(map(errordict, gpss.messages))
         
         # Send response
